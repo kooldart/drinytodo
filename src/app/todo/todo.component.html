@@ -1,0 +1,12 @@
+<input [(ngModel)]="currentItem" type="text">
+<button (click)="Add()">Add</button>
+<p>{{ currentItem }}</p>
+<h4>TODO with {{ things.length }} {{ things.length == 1 ? "item" : "items" }}<h4>
+<div *ngFor="let item of things; let i = index">
+	<h3>{{ i + 1 + "." + item }} <button (click)="Remove(i)">X</button></h3>
+</div>
+
+<h4>Completed Elements with {{ completed.length }} {{ completed.length == 1 ? "item" : "items" }}</h4>
+<div *ngFor="let item of completed; let i = index">
+	<h3>{{ i + 1 + "." + item }} <button (click)="RemoveCompleted(i)">X</button></h3>
+</div>
